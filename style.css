@@ -262,7 +262,8 @@ h1 em,h2 em{font-style:italic;color:var(--accent)}
   body{padding-bottom:84px}
   .home{min-height:0}
   .hero{grid-template-columns:1fr;gap:26px;padding:4px 0 20px}
-  .photos{order:-1;height:min(112vw,560px);grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:8px}
+  .photos{order:-1;height:auto;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:8px}
+  .portrait{aspect-ratio:3/4}
   .caption{white-space:normal;font-size:12px}
   .stack{gap:8px}
   .hero h1{font-size:40px;margin:16px 0}

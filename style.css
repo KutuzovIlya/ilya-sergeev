@@ -401,7 +401,7 @@ h1 em,h2 em{font-style:italic;color:var(--accent)}
   .foot .grid>div:first-child{grid-column:1/-1}
   .foot .legal{flex-direction:column;gap:6px}
   .lb .pv,.lb .nx{display:none}
-  .mbar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:fixed;left:12px;right:12px;bottom:12px;padding:8px;background:rgba(251,249,245,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:18px;z-index:30}
+  .mbar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:8px;background:var(--paper);border:1px solid var(--line);border-radius:18px;z-index:30;box-shadow:0 8px 24px -12px rgba(27,26,24,.25);transform:translate3d(0,0,0);will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}
   .mbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;padding:7px 0;border-radius:12px}
   .mbar a:first-child{background:var(--ink);color:var(--paper)}
   .mbar svg{width:18px;height:18px;fill:currentColor}

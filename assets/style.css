@@ -28,8 +28,8 @@ h1,h2,h3{font-weight:300;letter-spacing:-.03em;line-height:1.05}
 .ic{display:flex;gap:8px}
 .ic a{width:38px;height:38px;border-radius:50%;background:rgba(242,241,238,.1);display:grid;place-items:center;color:rgba(242,241,238,.85);transition:background .25s,color .25s}
 .ic a:hover{background:var(--ac);color:var(--on)}
-.ic .soon{width:38px;height:38px;border-radius:50%;background:rgba(242,241,238,.1);display:grid;place-items:center;opacity:.85}
-.ic .soon img{width:20px;height:20px;border-radius:50%}
+.ic .soon{width:38px;height:38px;border-radius:50%;background:rgba(242,241,238,.1);display:grid;place-items:center;color:rgba(242,241,238,.85)}
+.ic .soon svg{width:17px;height:17px}
 .ic svg{width:17px;height:17px}
 .ic img{width:20px;height:20px;border-radius:50%}
 .burger{display:none;width:42px;height:42px;border-radius:50%;background:rgba(242,241,238,.1);place-items:center}

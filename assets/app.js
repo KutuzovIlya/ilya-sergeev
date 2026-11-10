@@ -68,23 +68,57 @@
     if (v) { const g = $$(`[data-embed][data-g="${v.dataset.g}"]`); open(g.map(x => ({ embed: x.dataset.embed, title: x.dataset.title })), g.indexOf(v)); }
   });
 
-  // отзывы
+
+  // выбор мессенджера по кнопке «Написать»
+  const pick = $('#pick');
+  if (pick) {
+    let owner = null;
+    const hide = () => { pick.hidden = true; if (owner) owner.setAttribute('aria-expanded', 'false'); owner = null; };
+    document.addEventListener('click', e => {
+      const b = e.target.closest('[data-pick]');
+      if (b) {
+        e.preventDefault();
+        if (owner === b) { hide(); return; }
+        owner = b; y0 = scrollY; b.setAttribute('aria-expanded', 'true'); pick.hidden = false;
+        const r = b.getBoundingClientRect(), w = pick.offsetWidth, h = pick.offsetHeight;
+        let top = r.bottom + 8; if (top + h > innerHeight - 8) top = r.top - h - 8;
+        pick.style.top = Math.max(8, top) + 'px';
+        pick.style.left = Math.min(Math.max(8, r.left), innerWidth - w - 8) + 'px';
+        return;
+      }
+      if (!e.target.closest('#pick') || e.target.closest('a')) hide();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
+    let y0 = 0;
+    addEventListener('scroll', () => { if (!pick.hidden && innerWidth > 900 && Math.abs(scrollY - y0) > 60) hide(); }, { passive: true });
+  }
+
+  // отзывы: вкладки по виду праздника и аккуратный список
   const box = $('#revs'), data = $('#revdata');
   if (box && data) {
-    const R = JSON.parse(data.textContent), more = $('#more'); let shown = 0;
-    const add = n => {
-      R.slice(shown, shown + n).forEach(r => {
-        const long = r.t.length > 420, d = document.createElement('article');
-        d.className = 'rev rv' + (long ? ' long' : '');
-        d.innerHTML = `<header><span class="av">${esc(r.n.trim()[0] || '·').toUpperCase()}</span><div><b>${esc(r.n)}</b>${r.k ? `<small>${esc(r.k)}</small>` : ''}</div></header><p>${esc(r.t)}</p>` + (long ? '<button class="rd">Читать полностью</button>' : '');
-        box.appendChild(d);
-      });
-      shown = Math.min(R.length, shown + n); reveal(box);
-      more.hidden = shown >= R.length;
-      more.textContent = `Показать ещё (${R.length - shown})`;
+    const R = JSON.parse(data.textContent), more = $('#more'), tabs = $$('#revtabs button');
+    let list = R, shown = 0;
+    const row = r => {
+      const long = r.t.length > 360, d = document.createElement('article');
+      d.className = 'rev rv' + (long ? ' long' : '');
+      d.innerHTML = `<div class="rev-who"><span class="av">${esc(r.n.trim()[0] || '·').toUpperCase()}</span><div><b>${esc(r.n)}</b>${r.k ? `<small>${esc(r.k)}</small>` : ''}</div></div>`
+        + `<div class="rev-body"><p>${esc(r.t)}</p>${long ? '<button class="rd">Читать полностью</button>' : ''}</div>`;
+      return d;
     };
-    box.addEventListener('click', e => { const b = e.target.closest('.rd'); if (!b) return; const c = b.parentElement; c.classList.toggle('open'); b.textContent = c.classList.contains('open') ? 'Свернуть' : 'Читать полностью'; });
-    more.addEventListener('click', () => add(12)); add(12);
+    const add = n => {
+      list.slice(shown, shown + n).forEach(r => box.appendChild(row(r)));
+      shown = Math.min(list.length, shown + n); reveal(box);
+      more.hidden = shown >= list.length;
+      more.textContent = `Показать ещё (${list.length - shown})`;
+    };
+    const show = k => {
+      tabs.forEach(t => t.classList.toggle('on', t.dataset.k === k));
+      list = k ? R.filter(r => r.c === k) : R; shown = 0; box.innerHTML = ''; add(8);
+    };
+    tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.k)));
+    box.addEventListener('click', e => { const b = e.target.closest('.rd'); if (!b) return; const c = b.closest('.rev'); c.classList.toggle('open'); b.textContent = c.classList.contains('open') ? 'Свернуть' : 'Читать полностью'; });
+    more.addEventListener('click', () => add(8));
+    show('');
   }
 
   // окно «Оставить отзыв»

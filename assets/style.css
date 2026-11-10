@@ -39,7 +39,6 @@ h1,h2,h3{font-weight:300;letter-spacing:-.03em;line-height:1.05}
 .ic [aria-label=MAX] svg{width:16px;height:16px}
 .ic [aria-label=Telegram] svg{width:19px;height:19px}
 .ic [aria-label=Позвонить] svg{width:17px;height:17px}
-.mbar a[href*="wa.me"] svg{width:21px;height:21px}
 .ic img{width:20px;height:20px;border-radius:50%}
 .burger{display:none;width:42px;height:42px;border-radius:50%;background:rgba(242,241,238,.1);place-items:center}
 .burger i,.burger i::before,.burger i::after{display:block;width:16px;height:1.5px;background:var(--tx);position:relative}
@@ -290,10 +289,14 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
   .foot-c{align-items:flex-start}
   .lb .pv,.lb .nx{display:none}
   .rf{padding:30px 18px 22px}
-  .mbar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:8px;background:var(--sf);border:1px solid var(--ln);border-radius:18px;z-index:35;transform:translate3d(0,0,0)}
+  .mbar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:8px;background:var(--sf);border:1px solid var(--ln);border-radius:18px;z-index:35;transform:translate3d(0,0,0)}
+  .mbar .soon{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;padding:7px 0;color:var(--soft)}
   .mbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;padding:7px 0;border-radius:12px;color:var(--soft)}
   .mbar a:first-child{background:var(--ac);color:var(--on)}
-  .mbar svg{width:18px;height:18px}
+  .mbar svg{width:20px;height:20px;padding:1px}
+  .mbar a[href*="wa.me"] svg{padding:0}
+  .mbar .soon svg,.mbar a[href*="max.ru"] svg{padding:2px}
+  .mbar a[href^="tel"] svg{padding:2px}
 }
 @media (max-width:420px){.hero h1{font-size:46px}.grid-v{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.up,.rv{opacity:1;transform:none}}

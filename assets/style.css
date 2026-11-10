@@ -239,12 +239,15 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
 @media (max-width:900px){
   :root{--pad:16px}
   body{padding-bottom:84px}
-  .top{padding:14px 16px}
-  .nav a:not(.home),.top .ic{display:none}
-  .nav .home{padding-right:0}.nav .home::before{display:none}
-  .burger{display:grid}
+  .top{padding:12px 16px 10px;flex-direction:column;align-items:stretch;gap:10px;background:linear-gradient(rgba(20,21,23,.96),rgba(20,21,23,.75) 70%,rgba(20,21,23,0))}
+  .top .ic{display:none}
+  .burger{display:none}
+  .nav{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:8px 0;font-size:15px}
+  .nav .home{grid-column:1/-1;padding-right:0;font-size:16px}.nav .home::before{display:none}
+  .nav a:not(.home){padding:6px 0}
+  .nav a.on::after{bottom:0}
   .hero{min-height:560px}
-  .hero-cut{right:50%;transform:translateX(50%);height:auto;width:118%;max-width:560px;bottom:auto;top:64px;animation:none}
+  .hero-cut{right:50%;transform:translateX(50%);height:auto;width:118%;max-width:560px;bottom:auto;top:104px;animation:none}
   .hero::before{right:auto;left:50%;transform:translateX(-50%);top:40px;bottom:auto;width:130vw}
   .hero::after{background:linear-gradient(transparent 40%,var(--bg) 72%)}
   .hero-t{bottom:120px}
@@ -256,8 +259,8 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
   .phero-t{bottom:28px}
   .phero h1{font-size:48px}
   .phero p{font-size:16px}
-  .sub{overflow-x:auto;scrollbar-width:none;top:68px}
-  .sec{scroll-margin-top:130px}
+  .sub{overflow-x:auto;scrollbar-width:none;top:96px}
+  .sec{scroll-margin-top:160px}
   .sec{padding-top:52px}
   .formats{grid-template-columns:1fr}
   .grid-ph{columns:2;column-gap:8px}.grid-ph a{margin-bottom:8px}
@@ -265,7 +268,7 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
   .vcard i{width:44px;height:44px;margin:-22px 0 0 -22px}
   .vcard span{font-size:11.5px;padding:20px 8px 7px}
   .sec-h{flex-wrap:wrap}
-  .about{grid-template-columns:1fr;gap:28px;padding-top:84px}
+  .about{grid-template-columns:1fr;gap:28px;padding-top:112px}
   .about-pic{position:relative;top:0}
   .about p.big{font-size:21px}
   .facts b{font-size:28px}

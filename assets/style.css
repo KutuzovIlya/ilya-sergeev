@@ -61,7 +61,10 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
 /* главная */
 .hero{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden;background:var(--bg)}
 .hero-img{position:absolute;right:0;top:0;height:100%;width:min(62%,960px);object-fit:cover;object-position:50% 18%;filter:grayscale(1) contrast(1.05) brightness(.9);animation:fadein 1.6s ease both}
-.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--bg) 38%,rgba(20,21,23,.55) 60%,rgba(20,21,23,0) 80%),linear-gradient(transparent 55%,rgba(20,21,23,.85))}
+.hero::before{content:"";position:absolute;right:-6%;bottom:-20%;width:min(78vw,1150px);aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(147,174,156,.16),rgba(62,82,69,.10) 45%,transparent 72%);pointer-events:none}
+.hero-cut{position:absolute;right:max(4%,calc((100vw - var(--max))/2 + 40px));bottom:0;height:min(90%,880px);width:auto;max-width:none;-webkit-mask-image:linear-gradient(#000 80%,transparent 99%);mask-image:linear-gradient(#000 80%,transparent 99%);animation:cutin 1.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes cutin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--bg) 18%,rgba(20,21,23,0) 45%),linear-gradient(transparent 80%,var(--bg))}
 .hero-t{position:absolute;z-index:2;left:var(--pad);right:var(--pad);bottom:8vh;max-width:640px}
 .hero h1{font-size:clamp(52px,7vw,104px);margin:18px 0 16px}
 .hero-sub{color:var(--soft);font-size:17px;max-width:460px;margin-bottom:30px}
@@ -224,8 +227,9 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
   .nav a:not(.home),.top .ic{display:none}
   .burger{display:grid}
   .hero{min-height:560px}
-  .hero-img{width:100%;object-position:50% 14%}
-  .hero::after{background:linear-gradient(rgba(20,21,23,.6),transparent 25%,transparent 40%,var(--bg) 88%)}
+  .hero-cut{right:50%;transform:translateX(50%);height:auto;width:118%;max-width:560px;bottom:auto;top:64px;animation:none}
+  .hero::before{right:auto;left:50%;transform:translateX(-50%);top:40px;bottom:auto;width:130vw}
+  .hero::after{background:linear-gradient(transparent 40%,var(--bg) 72%)}
   .hero-t{bottom:120px}
   .hero h1{font-size:52px}
   .hero-sub{font-size:16px}

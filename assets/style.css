@@ -242,11 +242,11 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
   .top{padding:12px 16px 10px;flex-direction:column;align-items:stretch;gap:10px;background:linear-gradient(rgba(20,21,23,.96),rgba(20,21,23,.75) 70%,rgba(20,21,23,0))}
   .top .ic{display:none}
   .burger{display:none}
-  .nav{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:14.5px}
+  .nav{display:flex;justify-content:space-between;font-size:16px}
   .nav .home{display:none}
-  .nav a:not(.home){padding:11px 4px;text-align:center;border-radius:999px;background:var(--ac);color:var(--on);transition:background .25s,color .25s}
-  .nav a.on{background:var(--hl);color:#141517;font-weight:500}
-  .nav a.on::after{display:none}
+  .nav a:not(.home){padding:8px 0;color:var(--hl)}
+  .nav a.on{color:var(--tx)}
+  .nav a.on::after{bottom:2px;background:var(--hl)}
   .hero{min-height:560px}
   .hero-cut{right:50%;transform:translateX(50%);height:auto;width:118%;max-width:560px;bottom:auto;top:76px;animation:none}
   .hero::before{right:auto;left:50%;transform:translateX(-50%);top:40px;bottom:auto;width:130vw}

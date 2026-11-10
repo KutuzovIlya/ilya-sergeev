@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Три оттенка зелёного</title>
+<title>Болотный и рыжий на графите</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.ico" sizes="any">
 <style>
@@ -13,21 +13,22 @@
 :root{--bg:#141517;--sf:#1c1d20;--ln:#2a2b2f;--tx:#f2f1ee;--mu:#8f9196}
 body{background:#0d0e0f;color:var(--tx);font:15px/1.55 'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .page{max-width:1440px;margin:0 auto;padding:48px 32px 64px}
-.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:34px}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:30px}
 .intro h1{font-weight:300;font-size:38px;letter-spacing:-.03em;line-height:1.05}
 .intro p{color:var(--mu);max-width:470px}
-.base{display:flex;gap:10px;margin-bottom:34px;flex-wrap:wrap}
+.base{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap}
 .base div{display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border:1px solid var(--ln);border-radius:999px;font-size:12.5px;color:var(--mu)}
 .base i{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
 .base b{color:var(--tx);font-weight:500;margin-right:4px}
+.group{margin-bottom:56px}
+.group h2{font-weight:300;font-size:26px;letter-spacing:-.02em;margin-bottom:20px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .opt{display:flex;flex-direction:column;gap:14px}
 .opt-head{display:flex;justify-content:space-between;align-items:center}
 .opt-head b{font-weight:500;font-size:19px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
 .opt-head b i{width:14px;height:14px;border-radius:50%;background:var(--ac)}
-.opt-head span{color:var(--mu);font-size:12.5px;font-variant-numeric:tabular-nums}
-
-/* экран 1: как kutuzov.pro */
+.opt-head span{color:var(--mu);font-size:12.5px}
+.opt p.d{color:var(--mu);font-size:13px;margin-top:-8px}
 .scr{position:relative;border-radius:14px;overflow:hidden;background:var(--bg);aspect-ratio:4/5}
 .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:grayscale(1) brightness(.78) contrast(1.05)}
 .scr::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,21,23,.8),transparent 18%),radial-gradient(120% 90% at 55% 35%,transparent 40%,rgba(20,21,23,.9) 100%),linear-gradient(transparent 45%,rgba(20,21,23,.95))}
@@ -38,17 +39,15 @@ body{background:#0d0e0f;color:var(--tx);font:15px/1.55 'Onest',system-ui,sans-se
 .s-ic i::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(242,241,238,.75)}
 .s-bot{position:absolute;z-index:2;left:20px;right:20px;bottom:20px}
 .s-bot small{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,241,238,.7)}
-.s-bot small::before{content:"";width:22px;height:1px;background:var(--ac)}
-.s-bot h2{font-weight:300;font-size:40px;letter-spacing:-.035em;line-height:1;margin:12px 0 18px}
+.s-bot small::before{content:"";width:22px;height:1px;background:var(--hl)}
+.s-bot h3{font-weight:300;font-size:40px;letter-spacing:-.035em;line-height:1;margin:12px 0 18px}
 .s-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:var(--on);font-weight:500;font-size:13px;padding:12px 20px;border-radius:999px}
 .s-btn::after{content:"→"}
-
-/* экран 2: раздел внутри */
 .sec{background:var(--bg);border:1px solid var(--ln);border-radius:14px;padding:20px;display:grid;gap:14px}
-.sec h3{font-weight:300;font-size:24px;letter-spacing:-.02em}
+.sec h4{font-weight:300;font-size:24px;letter-spacing:-.02em}
 .tabs{display:flex;gap:6px}
 .tabs span{font-size:12px;padding:6px 12px;border-radius:999px;border:1px solid var(--ln);color:var(--mu)}
-.tabs span.on{border-color:var(--ac);color:var(--tx);background:color-mix(in srgb,var(--ac) 18%,transparent)}
+.tabs span.on{border-color:var(--ac);color:var(--tx);background:color-mix(in srgb,var(--ac) 22%,transparent)}
 .prices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .prices div{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:14px}
 .prices div.best{border-color:var(--ac)}
@@ -56,15 +55,10 @@ body{background:#0d0e0f;color:var(--tx);font:15px/1.55 'Onest',system-ui,sans-se
 .prices b{display:block;font-weight:400;font-size:20px;letter-spacing:-.02em;margin-top:6px}
 .prices b span{color:var(--hl)}
 .rev{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.45;color:#d9d8d4}
-.rev i{flex:none;width:2px;align-self:stretch;background:var(--ac)}
+.rev i{flex:none;width:2px;align-self:stretch;background:var(--hl)}
 .rev em{display:block;font-style:normal;font-size:11px;color:var(--mu);margin-top:4px}
 .add{justify-self:start;font-size:12.5px;color:var(--hl);border-bottom:1px solid currentColor;padding-bottom:1px}
-
-.o1{--ac:#0f6b4f;--hl:#4fc08f;--on:#eaf6f0}
-.o2{--ac:#24503f;--hl:#86b9a0;--on:#eef5f1}
-.o3{--ac:#9bb5a0;--hl:#a9c4ae;--on:#14211a}
-
-.note{margin-top:34px;color:var(--mu);font-size:13.5px;max-width:760px}
+.note{color:var(--mu);font-size:13.5px;max-width:760px}
 @media (max-width:1000px){
   .page{padding:28px 16px 48px}
   .intro{flex-direction:column;align-items:flex-start;gap:10px}
@@ -76,8 +70,8 @@ body{background:#0d0e0f;color:var(--tx);font:15px/1.55 'Onest',system-ui,sans-se
 <body>
 <div class="page">
   <div class="intro">
-    <h1>Тёмный графит<br>и три оттенка зелёного</h1>
-    <p>Подача как на kutuzov.pro: крупное чёрно-белое фото, тонкий шрифт, тёмный фон. Изумруд яркий и сочный, бутылочный глубокий и спокойный, шалфей светлый и мягкий. Выберите один.</p>
+    <h1>Болотный и рыжий<br>на тёмном графите</h1>
+    <p>Подача как на kutuzov.pro: крупное чёрно-белое фото, тонкий шрифт, тёмный фон. Меняется только цвет кнопок и выделений. Выберите один из пяти.</p>
   </div>
   <div class="base">
     <div><i style="background:#141517"></i><b>Фон</b>#141517</div>
@@ -85,55 +79,29 @@ body{background:#0d0e0f;color:var(--tx);font:15px/1.55 'Onest',system-ui,sans-se
     <div><i style="background:#f2f1ee"></i><b>Текст</b>#F2F1EE</div>
     <div><i style="background:#8f9196"></i><b>Подписи</b>#8F9196</div>
   </div>
-
-  <div class="grid">
-    <section class="opt o1">
-      <div class="opt-head"><b><i></i>1. Изумруд</b><span>#0F6B4F</span></div>
-      <div class="scr"><img src="img/f/obrazy-51.webp" alt="">
-        <div class="s-top"><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav><div class="s-ic"><i></i><i></i><i></i></div></div>
-        <div class="s-bot"><small>Ведущий свадеб и мероприятий</small><h2>Илья Сергеев</h2><span class="s-btn">Узнать, свободна ли дата</span></div>
-      </div>
-      <div class="sec">
-        <h3>Свадьбы</h3>
-        <div class="tabs"><span class="on">Стоимость</span><span>Фото</span><span>Видео</span></div>
-        <div class="prices"><div><small>«На донышке»</small><b><span>115 000</span> ₽</b></div><div class="best"><small>«Базовый минимум»</small><b><span>125 000</span> ₽</b></div></div>
-        <div class="rev"><i></i><div>Индивидуальный подход к клиенту на высшем уровне<em>Наталья Кондрусева</em></div></div>
-        <span class="add">Оставить отзыв</span>
-      </div>
-    </section>
-
-    <section class="opt o2">
-      <div class="opt-head"><b><i></i>2. Бутылочный</b><span>#24503F</span></div>
-      <div class="scr"><img src="img/f/obrazy-51.webp" alt="">
-        <div class="s-top"><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav><div class="s-ic"><i></i><i></i><i></i></div></div>
-        <div class="s-bot"><small>Ведущий свадеб и мероприятий</small><h2>Илья Сергеев</h2><span class="s-btn">Узнать, свободна ли дата</span></div>
-      </div>
-      <div class="sec">
-        <h3>Свадьбы</h3>
-        <div class="tabs"><span class="on">Стоимость</span><span>Фото</span><span>Видео</span></div>
-        <div class="prices"><div><small>«На донышке»</small><b><span>115 000</span> ₽</b></div><div class="best"><small>«Базовый минимум»</small><b><span>125 000</span> ₽</b></div></div>
-        <div class="rev"><i></i><div>Индивидуальный подход к клиенту на высшем уровне<em>Наталья Кондрусева</em></div></div>
-        <span class="add">Оставить отзыв</span>
-      </div>
-    </section>
-
-    <section class="opt o3">
-      <div class="opt-head"><b><i></i>3. Шалфей</b><span>#9BB5A0</span></div>
-      <div class="scr"><img src="img/f/obrazy-51.webp" alt="">
-        <div class="s-top"><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav><div class="s-ic"><i></i><i></i><i></i></div></div>
-        <div class="s-bot"><small>Ведущий свадеб и мероприятий</small><h2>Илья Сергеев</h2><span class="s-btn">Узнать, свободна ли дата</span></div>
-      </div>
-      <div class="sec">
-        <h3>Свадьбы</h3>
-        <div class="tabs"><span class="on">Стоимость</span><span>Фото</span><span>Видео</span></div>
-        <div class="prices"><div><small>«На донышке»</small><b><span>115 000</span> ₽</b></div><div class="best"><small>«Базовый минимум»</small><b><span>125 000</span> ₽</b></div></div>
-        <div class="rev"><i></i><div>Индивидуальный подход к клиенту на высшем уровне<em>Наталья Кондрусева</em></div></div>
-        <span class="add">Оставить отзыв</span>
-      </div>
-    </section>
-  </div>
-
+  <section class="group"><h2>Болотный</h2><div class="grid" id="g1"></div></section>
+  <section class="group"><h2>Рыжий</h2><div class="grid" id="g2"></div></section>
   <p class="note">Это схема, а не готовый дизайн: показывает цвета и общее настроение. После выбора соберём в этом стиле весь сайт и админку.</p>
 </div>
+<script>
+const opts=[
+ ['g1','1. Мох','#4E5A36','#AEBB86','#F1F3EA','глубокий оливково-болотный'],
+ ['g1','2. Тина','#3E5245','#93AE9C','#EEF4F0','серо-зелёный, самый спокойный'],
+ ['g1','3. Хаки','#77784A','#C2C38A','#17170E','светлее, ближе к оливе'],
+ ['g2','4. Медь','#B0562C','#E38A5C','#FFF3EC','насыщенный рыжий, как медь'],
+ ['g2','5. Охра','#C08A43','#DDAE6E','#1C1408','тёплый рыжевато-золотой'],
+];
+const card=(n,ac,hl,on,d)=>`<section class="opt" style="--ac:${ac};--hl:${hl};--on:${on}">
+ <div class="opt-head"><b><i></i>${n}</b><span>${ac}</span></div><p class="d">${d}</p>
+ <div class="scr"><img src="img/f/obrazy-51.webp" alt="">
+  <div class="s-top"><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav><div class="s-ic"><i></i><i></i><i></i></div></div>
+  <div class="s-bot"><small>Ведущий свадеб и мероприятий</small><h3>Илья Сергеев</h3><span class="s-btn">Узнать, свободна ли дата</span></div></div>
+ <div class="sec"><h4>Свадьбы</h4>
+  <div class="tabs"><span class="on">Стоимость</span><span>Фото</span><span>Видео</span></div>
+  <div class="prices"><div><small>«На донышке»</small><b><span>115 000</span> ₽</b></div><div class="best"><small>«Базовый минимум»</small><b><span>125 000</span> ₽</b></div></div>
+  <div class="rev"><i></i><div>Индивидуальный подход к клиенту на высшем уровне<em>Наталья Кондрусева</em></div></div>
+  <span class="add">Оставить отзыв</span></div></section>`;
+opts.forEach(([g,...o])=>document.getElementById(g).insertAdjacentHTML('beforeend',card(...o)));
+</script>
 </body>
 </html>

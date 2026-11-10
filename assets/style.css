@@ -24,7 +24,10 @@ h1,h2,h3{font-weight:300;letter-spacing:-.03em;line-height:1.05}
 .nav a{transition:color .25s;position:relative}
 .nav a:hover,.nav a.on{color:var(--tx)}
 .nav a.on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--hl)}
-.nav .home{color:var(--tx);font-weight:500;margin-right:14px}
+.nav .home{color:var(--hl);font-weight:500;letter-spacing:.01em;padding-right:30px;margin-right:0;position:relative}
+.nav .home::before{content:"";position:absolute;right:0;top:50%;width:1px;height:18px;margin-top:-9px;background:var(--ln)}
+.nav .home:hover{color:var(--tx)}
+.nav .home.on::after,.nav a.home::after{display:none}
 .ic{display:flex;gap:8px}
 .ic a{width:38px;height:38px;border-radius:50%;background:rgba(242,241,238,.1);display:grid;place-items:center;color:rgba(242,241,238,.85);transition:background .25s,color .25s}
 .ic a:hover{background:var(--ac);color:var(--on)}
@@ -238,6 +241,7 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
   body{padding-bottom:84px}
   .top{padding:14px 16px}
   .nav a:not(.home),.top .ic{display:none}
+  .nav .home{padding-right:0}.nav .home::before{display:none}
   .burger{display:grid}
   .hero{min-height:560px}
   .hero-cut{right:50%;transform:translateX(50%);height:auto;width:118%;max-width:560px;bottom:auto;top:64px;animation:none}

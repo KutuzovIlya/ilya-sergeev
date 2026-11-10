@@ -3,162 +3,137 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Три палитры для сайта</title>
+<title>Три акцента для сайта</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.ico" sizes="any">
 <style>
 @font-face{font-family:'Onest';src:url(fonts/onest-cyrillic-wght-normal.woff2) format('woff2');font-weight:100 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:'Onest';src:url(fonts/onest-latin-wght-normal.woff2) format('woff2');font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#e9e8e5;color:#1a1a1a;font:15px/1.55 'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-.page{max-width:1400px;margin:0 auto;padding:48px 32px 64px}
-.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px}
-.intro h1{font-weight:600;font-size:34px;letter-spacing:-.02em;line-height:1.1}
-.intro p{color:#5d5c58;max-width:460px}
+:root{--bg:#141517;--sf:#1c1d20;--ln:#2a2b2f;--tx:#f2f1ee;--mu:#8f9196}
+body{background:#0d0e0f;color:var(--tx);font:15px/1.55 'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.page{max-width:1440px;margin:0 auto;padding:48px 32px 64px}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:34px}
+.intro h1{font-weight:300;font-size:38px;letter-spacing:-.03em;line-height:1.05}
+.intro p{color:var(--mu);max-width:470px}
+.base{display:flex;gap:10px;margin-bottom:34px;flex-wrap:wrap}
+.base div{display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border:1px solid var(--ln);border-radius:999px;font-size:12.5px;color:var(--mu)}
+.base i{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
+.base b{color:var(--tx);font-weight:500;margin-right:4px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.opt{display:flex;flex-direction:column;gap:16px}
-.opt-head{display:flex;justify-content:space-between;align-items:baseline}
-.opt-head b{font-weight:600;font-size:18px}
-.opt-head span{color:#6d6c68;font-size:13px}
-.sw{display:flex;gap:8px;flex-wrap:wrap}
-.sw div{flex:1;min-width:70px}
-.sw i{display:block;height:46px;border-radius:8px;border:1px solid rgba(0,0,0,.08)}
-.sw small{display:block;font-size:11.5px;color:#6d6c68;margin-top:6px;line-height:1.3}
-.sw small b{display:block;color:#1a1a1a;font-weight:500}
-.acc{display:flex;gap:8px}
-.acc button{font:inherit;font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid #c9c7c2;background:transparent;cursor:pointer;display:flex;align-items:center;gap:8px}
-.acc button i{width:12px;height:12px;border-radius:50%}
-.acc button.on{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.opt{display:flex;flex-direction:column;gap:14px}
+.opt-head{display:flex;justify-content:space-between;align-items:center}
+.opt-head b{font-weight:500;font-size:19px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.opt-head b i{width:14px;height:14px;border-radius:50%;background:var(--ac)}
+.opt-head span{color:var(--mu);font-size:12.5px;font-variant-numeric:tabular-nums}
 
-/* мини-макет */
-.mock{border-radius:14px;overflow:hidden;background:var(--bg);color:var(--tx);box-shadow:0 30px 60px -40px rgba(0,0,0,.5);transition:background .4s}
-.m-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:12px}
-.m-top b{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12px}
-.m-top nav{display:flex;gap:14px;color:var(--mu)}
-.m-hero{position:relative;height:300px;margin:0 12px;border-radius:8px;overflow:hidden}
-.m-hero img{width:100%;height:100%;object-fit:cover}
-.m-hero .t{position:absolute;left:18px;right:18px;bottom:18px}
-.m-hero h2{font-weight:600;font-size:30px;letter-spacing:-.025em;line-height:1.02}
-.m-hero p{font-size:12.5px;margin-top:6px;opacity:.85}
-.m-body{padding:18px 20px 22px;display:grid;gap:14px}
-.m-btn{justify-self:start;background:var(--ac);color:var(--on);font-weight:500;font-size:13px;padding:11px 20px;border-radius:999px;transition:background .4s}
-.m-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.m-card{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:14px;transition:background .4s}
-.m-card small{display:block;font-size:11px;color:var(--mu)}
-.m-card b{display:block;font-weight:600;font-size:19px;letter-spacing:-.02em;margin-top:4px}
-.m-card b em{font-style:normal;color:var(--ac2)}
-.m-q{font-size:13px;line-height:1.45;border-left:2px solid var(--ac2);padding-left:12px;color:var(--tx)}
-.m-q span{display:block;font-size:11px;color:var(--mu);margin-top:4px}
+/* экран 1: как kutuzov.pro */
+.scr{position:relative;border-radius:14px;overflow:hidden;background:var(--bg);aspect-ratio:4/5}
+.scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:grayscale(1) brightness(.78) contrast(1.05)}
+.scr::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,21,23,.8),transparent 18%),radial-gradient(120% 90% at 55% 35%,transparent 40%,rgba(20,21,23,.9) 100%),linear-gradient(transparent 45%,rgba(20,21,23,.95))}
+.s-top{position:absolute;z-index:2;left:18px;right:18px;top:16px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(242,241,238,.78)}
+.s-top nav{display:flex;gap:14px}
+.s-ic{display:flex;gap:6px}
+.s-ic i{width:24px;height:24px;border-radius:50%;background:rgba(242,241,238,.16);display:grid;place-items:center}
+.s-ic i::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(242,241,238,.75)}
+.s-bot{position:absolute;z-index:2;left:20px;right:20px;bottom:20px}
+.s-bot small{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,241,238,.7)}
+.s-bot small::before{content:"";width:22px;height:1px;background:var(--ac)}
+.s-bot h2{font-weight:300;font-size:40px;letter-spacing:-.035em;line-height:1;margin:12px 0 18px}
+.s-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ac);color:var(--on);font-weight:500;font-size:13px;padding:12px 20px;border-radius:999px}
+.s-btn::after{content:"→"}
 
-/* варианты */
-.o1 .mock{--bg:#17181b;--sf:#202125;--tx:#ece9e4;--mu:#8e9096;--ln:#2c2d32;--ac:#8e1c32;--ac2:#c0475e;--on:#fff}
-.o1 .m-hero img{filter:saturate(.85) brightness(.82)}
-.o1 .m-hero .t{color:#fff}
-.o1 .m-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(10,10,12,.75))}
-.o1 .m-hero .t{z-index:1}
-.o2 .mock{--bg:#111214;--sf:#17181a;--tx:#f4f4f2;--mu:#8b8d90;--ln:#26272a;--ac:#f4f4f2;--ac2:#f4f4f2;--on:#111214}
-.o2 .m-hero{height:360px;margin:0;border-radius:0}
-.o2 .m-hero img{filter:grayscale(1) contrast(1.05)}
-.o2 .m-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(17,18,20,.85),transparent 22%),linear-gradient(90deg,rgba(17,18,20,.85),transparent 60%),linear-gradient(transparent 50%,rgba(17,18,20,.9))}
-.o2 .m-hero .t{z-index:1;color:#f4f4f2}
-.o2 .m-hero h2{font-weight:300;font-size:34px}
-.o2 .m-top{position:absolute;left:0;right:0;z-index:2;color:#f4f4f2}
-.o2 .mock{position:relative}
-.o3 .mock{--bg:#f3f2ef;--sf:#fbfaf8;--tx:#1b1a18;--mu:#6b6862;--ln:#dedbd5;--ac:#1b1a18;--ac2:#7b6a5a;--on:#f3f2ef}
-.o3 .m-hero img{object-position:50% 30%}
-.o3 .m-hero .t{position:static;padding:16px 6px 0;color:var(--tx)}
-.o3 .m-hero{height:auto}
-.o3 .m-hero img{height:250px;border-radius:8px}
+/* экран 2: раздел внутри */
+.sec{background:var(--bg);border:1px solid var(--ln);border-radius:14px;padding:20px;display:grid;gap:14px}
+.sec h3{font-weight:300;font-size:24px;letter-spacing:-.02em}
+.tabs{display:flex;gap:6px}
+.tabs span{font-size:12px;padding:6px 12px;border-radius:999px;border:1px solid var(--ln);color:var(--mu)}
+.tabs span.on{border-color:var(--ac);color:var(--tx);background:color-mix(in srgb,var(--ac) 18%,transparent)}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.prices div{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:14px}
+.prices div.best{border-color:var(--ac)}
+.prices small{display:block;font-size:11px;color:var(--mu)}
+.prices b{display:block;font-weight:400;font-size:20px;letter-spacing:-.02em;margin-top:6px}
+.prices b span{color:var(--hl)}
+.rev{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.45;color:#d9d8d4}
+.rev i{flex:none;width:2px;align-self:stretch;background:var(--ac)}
+.rev em{display:block;font-style:normal;font-size:11px;color:var(--mu);margin-top:4px}
+.add{justify-self:start;font-size:12.5px;color:var(--hl);border-bottom:1px solid currentColor;padding-bottom:1px}
 
-.note{margin-top:34px;color:#5d5c58;font-size:13.5px;max-width:720px}
+.o1{--ac:#7b2337;--hl:#d27a8c;--on:#f7eef0}
+.o2{--ac:#81d8d0;--hl:#81d8d0;--on:#10302d}
+.o3{--ac:#2f6a55;--hl:#8cc3a9;--on:#eef6f2}
+
+.note{margin-top:34px;color:var(--mu);font-size:13.5px;max-width:760px}
 @media (max-width:1000px){
   .page{padding:28px 16px 48px}
   .intro{flex-direction:column;align-items:flex-start;gap:10px}
-  .intro h1{font-size:26px}
-  .grid{grid-template-columns:1fr;gap:44px}
+  .intro h1{font-size:30px}
+  .grid{grid-template-columns:1fr;gap:46px}
 }
 </style>
 </head>
 <body>
 <div class="page">
   <div class="intro">
-    <h1>Три палитры для сайта</h1>
-    <p>Шрифт во всех вариантах один и без наклона. Выберите сочетание цветов, по нему соберём сайт и админку.</p>
+    <h1>Тёмный графит<br>и три акцента</h1>
+    <p>Подача как на kutuzov.pro: крупное чёрно-белое фото, тонкий шрифт, тёмный фон. Отличается только цвет кнопок и выделений. Выберите один из трёх.</p>
+  </div>
+  <div class="base">
+    <div><i style="background:#141517"></i><b>Фон</b>#141517</div>
+    <div><i style="background:#1c1d20"></i><b>Блоки</b>#1C1D20</div>
+    <div><i style="background:#f2f1ee"></i><b>Текст</b>#F2F1EE</div>
+    <div><i style="background:#8f9196"></i><b>Подписи</b>#8F9196</div>
   </div>
 
   <div class="grid">
-    <section class="opt o1" id="o1">
-      <div class="opt-head"><b>1. Графит</b><span>тёмный, с одним цветом</span></div>
-      <div class="acc" id="acc">
-        <button class="on" data-a="#8e1c32" data-b="#c0475e"><i style="background:#8e1c32"></i>Рубин</button>
-        <button data-a="#23468a" data-b="#5b80c8"><i style="background:#23468a"></i>Сапфир</button>
-        <button data-a="#1d5c48" data-b="#4f9a80"><i style="background:#1d5c48"></i>Изумруд</button>
+    <section class="opt o1">
+      <div class="opt-head"><b><i></i>1. Бургунди</b><span>#7B2337</span></div>
+      <div class="scr"><img src="img/f/obrazy-51.webp" alt="">
+        <div class="s-top"><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav><div class="s-ic"><i></i><i></i><i></i></div></div>
+        <div class="s-bot"><small>Ведущий свадеб и мероприятий</small><h2>Илья Сергеев</h2><span class="s-btn">Узнать, свободна ли дата</span></div>
       </div>
-      <div class="sw">
-        <div><i style="background:#17181b"></i><small><b>Фон</b>#17181B</small></div>
-        <div><i style="background:#202125"></i><small><b>Блоки</b>#202125</small></div>
-        <div><i style="background:#ece9e4"></i><small><b>Текст</b>#ECE9E4</small></div>
-        <div><i id="sw1" style="background:#8e1c32"></i><small><b>Акцент</b><span id="hx1">#8E1C32</span></small></div>
-      </div>
-      <div class="mock">
-        <div class="m-top"><b>Илья Сергеев</b><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav></div>
-        <div class="m-hero"><img src="img/f/obrazy-48.webp" alt=""><div class="t"><h2>Ведущий свадеб и мероприятий</h2><p>Москва и Тверь, с 2014 года</p></div></div>
-        <div class="m-body">
-          <span class="m-btn">Узнать, свободна ли дата</span>
-          <div class="m-row"><div class="m-card"><small>Свадьба</small><b>от <em>115 000 ₽</em></b></div><div class="m-card"><small>Мероприятие</small><b>от <em>14 000 ₽</em>/ч</b></div></div>
-          <div class="m-q">Индивидуальный подход к клиенту на высшем уровне<span>Наталья Кондрусева</span></div>
-        </div>
+      <div class="sec">
+        <h3>Свадьбы</h3>
+        <div class="tabs"><span class="on">Стоимость</span><span>Фото</span><span>Видео</span></div>
+        <div class="prices"><div><small>«На донышке»</small><b><span>115 000</span> ₽</b></div><div class="best"><small>«Базовый минимум»</small><b><span>125 000</span> ₽</b></div></div>
+        <div class="rev"><i></i><div>Индивидуальный подход к клиенту на высшем уровне<em>Наталья Кондрусева</em></div></div>
+        <span class="add">Оставить отзыв</span>
       </div>
     </section>
 
     <section class="opt o2">
-      <div class="opt-head"><b>2. Как kutuzov.pro</b><span>чёрно-белый</span></div>
-      <div class="sw">
-        <div><i style="background:#111214"></i><small><b>Фон</b>#111214</small></div>
-        <div><i style="background:#17181a"></i><small><b>Блоки</b>#17181A</small></div>
-        <div><i style="background:#8b8d90"></i><small><b>Подписи</b>#8B8D90</small></div>
-        <div><i style="background:#f4f4f2"></i><small><b>Текст</b>#F4F4F2</small></div>
+      <div class="opt-head"><b><i></i>2. Тиффани</b><span>#81D8D0</span></div>
+      <div class="scr"><img src="img/f/obrazy-51.webp" alt="">
+        <div class="s-top"><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav><div class="s-ic"><i></i><i></i><i></i></div></div>
+        <div class="s-bot"><small>Ведущий свадеб и мероприятий</small><h2>Илья Сергеев</h2><span class="s-btn">Узнать, свободна ли дата</span></div>
       </div>
-      <div class="mock">
-        <div class="m-top"><b>Илья Сергеев</b><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav></div>
-        <div class="m-hero"><img src="img/f/obrazy-51.webp" alt=""><div class="t"><h2>Илья Сергеев</h2><p>Ведущий свадеб и мероприятий</p></div></div>
-        <div class="m-body">
-          <span class="m-btn">Узнать, свободна ли дата</span>
-          <div class="m-row"><div class="m-card"><small>Свадьба</small><b>от 115 000 ₽</b></div><div class="m-card"><small>Мероприятие</small><b>от 14 000 ₽/ч</b></div></div>
-          <div class="m-q">Индивидуальный подход к клиенту на высшем уровне<span>Наталья Кондрусева</span></div>
-        </div>
+      <div class="sec">
+        <h3>Свадьбы</h3>
+        <div class="tabs"><span class="on">Стоимость</span><span>Фото</span><span>Видео</span></div>
+        <div class="prices"><div><small>«На донышке»</small><b><span>115 000</span> ₽</b></div><div class="best"><small>«Базовый минимум»</small><b><span>125 000</span> ₽</b></div></div>
+        <div class="rev"><i></i><div>Индивидуальный подход к клиенту на высшем уровне<em>Наталья Кондрусева</em></div></div>
+        <span class="add">Оставить отзыв</span>
       </div>
     </section>
 
     <section class="opt o3">
-      <div class="opt-head"><b>3. Светлый</b><span>как сейчас, только строже</span></div>
-      <div class="sw">
-        <div><i style="background:#f3f2ef"></i><small><b>Фон</b>#F3F2EF</small></div>
-        <div><i style="background:#fbfaf8"></i><small><b>Блоки</b>#FBFAF8</small></div>
-        <div><i style="background:#1b1a18"></i><small><b>Текст</b>#1B1A18</small></div>
-        <div><i style="background:#7b6a5a"></i><small><b>Акцент</b>#7B6A5A</small></div>
+      <div class="opt-head"><b><i></i>3. Глубокий зелёный</b><span>#2F6A55</span></div>
+      <div class="scr"><img src="img/f/obrazy-51.webp" alt="">
+        <div class="s-top"><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav><div class="s-ic"><i></i><i></i><i></i></div></div>
+        <div class="s-bot"><small>Ведущий свадеб и мероприятий</small><h2>Илья Сергеев</h2><span class="s-btn">Узнать, свободна ли дата</span></div>
       </div>
-      <div class="mock">
-        <div class="m-top"><b>Илья Сергеев</b><nav><span>Свадьбы</span><span>Мероприятия</span><span>Обо мне</span></nav></div>
-        <div class="m-hero"><img src="img/f/molodozheny-14.webp" alt=""><div class="t"><h2>Ведущий свадеб и мероприятий</h2><p>Москва и Тверь, с 2014 года</p></div></div>
-        <div class="m-body">
-          <span class="m-btn">Узнать, свободна ли дата</span>
-          <div class="m-row"><div class="m-card"><small>Свадьба</small><b>от <em>115 000 ₽</em></b></div><div class="m-card"><small>Мероприятие</small><b>от <em>14 000 ₽</em>/ч</b></div></div>
-          <div class="m-q">Индивидуальный подход к клиенту на высшем уровне<span>Наталья Кондрусева</span></div>
-        </div>
+      <div class="sec">
+        <h3>Свадьбы</h3>
+        <div class="tabs"><span class="on">Стоимость</span><span>Фото</span><span>Видео</span></div>
+        <div class="prices"><div><small>«На донышке»</small><b><span>115 000</span> ₽</b></div><div class="best"><small>«Базовый минимум»</small><b><span>125 000</span> ₽</b></div></div>
+        <div class="rev"><i></i><div>Индивидуальный подход к клиенту на высшем уровне<em>Наталья Кондрусева</em></div></div>
+        <span class="add">Оставить отзыв</span>
       </div>
     </section>
   </div>
 
-  <p class="note">Это не готовый дизайн, а только цвета и общее настроение. После выбора соберём в нём весь сайт: разделы «Свадьбы», «Мероприятия», «Обо мне» и админку для фото, видео и цен.</p>
+  <p class="note">Это схема, а не готовый дизайн: показывает цвета и общее настроение. После выбора соберём в этом стиле весь сайт и админку.</p>
 </div>
-<script>
-const o1=document.querySelector('#o1 .mock'),sw=document.getElementById('sw1'),hx=document.getElementById('hx1');
-document.querySelectorAll('#acc button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('#acc button').forEach(x=>x.classList.toggle('on',x===b));
-  o1.style.setProperty('--ac',b.dataset.a);o1.style.setProperty('--ac2',b.dataset.b);
-  sw.style.background=b.dataset.a;hx.textContent=b.dataset.a.toUpperCase();
-}));
-</script>
 </body>
 </html>

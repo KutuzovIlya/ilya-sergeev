@@ -254,7 +254,7 @@ body.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
   .mx:active{background:var(--ac)}
   body:not(.is-home) main{animation:sheet .45s cubic-bezier(.2,.8,.2,1) both}
   @keyframes sheet{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
-  .nav a:not(.home){padding:8px 0;color:var(--hl)}
+  .nav a:not(.home){padding:8px 0;color:var(--tx)}
   .nav a.on{color:var(--tx)}
   .nav a.on::after{bottom:2px;background:var(--hl)}
   .hero{min-height:560px}
